@@ -1,6 +1,6 @@
 # SWEM Addendum Spawner
 
-A simple & lightweight Minecraft Forge mod that adds swem addendum horses to the spawn table; allowing them to accur naturally in the world. 
+A simple & lightweight Minecraft Forge mod that adds swem addendum horses to the spawn table; allowing them to occur naturally in the world. 
 
 ## Breed Spawn Table
 
@@ -54,6 +54,10 @@ This file allows you to enable or disable the natural spawning of each breed. Ex
 - Setting a breed to `false` disables its natural spawning.
 
 After changing the config, restart Minecraft for changes to take effect.
+
+## Requirements
+
+See our curseforge page on how to install this mod
 
 ## Support
 
