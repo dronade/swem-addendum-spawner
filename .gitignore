@@ -1,0 +1,24 @@
+# Gradle
+.gradle/
+build/
+
+# IDE stuff
+.idea/
+*.iml
+*.iws
+*.ipr
+.project
+.classpath
+.settings/
+bin/
+.vscode/
+
+# Minecraft/Forge runtime data
+run/
+out/
+logs/
+
+# Local configs
+gradle.properties
+!gradle.properties.example
+*.log
