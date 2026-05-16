@@ -1,14 +1,5 @@
 {
-  "type": "forge:add_spawns",
-  "biomes": [
-    "minecraft:plains",
-    "minecraft:meadow",
-    "minecraft:forest"
-  ],
-  "spawners": {
-    "type": "swemaddendum:irish_draught",
-    "weight": 5,
-    "minCount": 2,
-    "maxCount": 6
-  }
+  "type": "addendumspawner:configurable_breed_spawn",
+  "breed_key": "irish_draught",
+  "entity_type": "swemaddendum:irish_draught"
 }

@@ -1,14 +1,5 @@
 {
-  "type": "forge:add_spawns",
-  "biomes": [
-    "minecraft:plains",
-    "minecraft:savanna",
-    "minecraft:badlands"
-  ],
-  "spawners": {
-    "type": "swemaddendum:american_quarter_horse",
-    "weight": 5,
-    "minCount": 2,
-    "maxCount": 5
-  }
+  "type": "addendumspawner:configurable_breed_spawn",
+  "breed_key": "american_quarter_horse",
+  "entity_type": "swemaddendum:american_quarter_horse"
 }

@@ -1,13 +1,5 @@
 {
-  "type": "forge:add_spawns",
-  "biomes": [
-    "minecraft:plains",
-    "minecraft:savanna"
-  ],
-  "spawners": {
-    "type": "swemaddendum:thoroughbred",
-    "weight": 5,
-    "minCount": 2,
-    "maxCount": 6
-  }
+  "type": "addendumspawner:configurable_breed_spawn",
+  "breed_key": "thoroughbred",
+  "entity_type": "swemaddendum:thoroughbred"
 }

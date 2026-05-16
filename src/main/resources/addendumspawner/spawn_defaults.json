@@ -1,0 +1,200 @@
+{
+  "breeds": {
+    "american_quarter_horse": {
+      "enabled": true,
+      "weight": 5,
+      "minCount": 2,
+      "maxCount": 5,
+      "biomes": [
+        "minecraft:plains",
+        "minecraft:savanna",
+        "minecraft:badlands"
+      ]
+    },
+    "arabian": {
+      "enabled": true,
+      "weight": 5,
+      "minCount": 2,
+      "maxCount": 5,
+      "biomes": [
+        "minecraft:desert",
+        "minecraft:savanna",
+        "minecraft:savanna_plateau"
+      ]
+    },
+    "breton": {
+      "enabled": true,
+      "weight": 5,
+      "minCount": 2,
+      "maxCount": 5,
+      "biomes": [
+        "minecraft:forest",
+        "minecraft:birch_forest",
+        "minecraft:taiga"
+      ]
+    },
+    "donkey": {
+      "enabled": true,
+      "weight": 5,
+      "minCount": 2,
+      "maxCount": 4,
+      "biomes": [
+        "minecraft:desert",
+        "minecraft:savanna",
+        "minecraft:plains"
+      ]
+    },
+    "fjord": {
+      "enabled": true,
+      "weight": 5,
+      "minCount": 2,
+      "maxCount": 5,
+      "biomes": [
+        "minecraft:snowy_slopes",
+        "minecraft:snowy_taiga",
+        "minecraft:grove",
+        "minecraft:windswept_hills"
+      ]
+    },
+    "friesian": {
+      "enabled": true,
+      "weight": 5,
+      "minCount": 2,
+      "maxCount": 5,
+      "biomes": [
+        "minecraft:dark_forest",
+        "minecraft:forest",
+        "minecraft:taiga"
+      ]
+    },
+    "irish_draught": {
+      "enabled": true,
+      "weight": 5,
+      "minCount": 2,
+      "maxCount": 6,
+      "biomes": [
+        "minecraft:plains",
+        "minecraft:meadow",
+        "minecraft:forest"
+      ]
+    },
+    "irish_draught_pegasus": {
+      "enabled": true,
+      "weight": 1,
+      "minCount": 1,
+      "maxCount": 2,
+      "biomes": [
+        "minecraft:windswept_hills",
+        "minecraft:jagged_peaks",
+        "minecraft:grove"
+      ]
+    },
+    "kladruper": {
+      "enabled": true,
+      "weight": 5,
+      "minCount": 2,
+      "maxCount": 4,
+      "biomes": [
+        "minecraft:plains",
+        "minecraft:meadow",
+        "minecraft:forest"
+      ]
+    },
+    "knabstrupper": {
+      "enabled": true,
+      "weight": 5,
+      "minCount": 1,
+      "maxCount": 3,
+      "biomes": [
+        "minecraft:plains",
+        "minecraft:sunflower_plains",
+        "minecraft:savanna"
+      ]
+    },
+    "marwari": {
+      "enabled": true,
+      "weight": 5,
+      "minCount": 1,
+      "maxCount": 2,
+      "biomes": [
+        "minecraft:desert",
+        "minecraft:badlands",
+        "minecraft:eroded_badlands"
+      ]
+    },
+    "mule": {
+      "enabled": true,
+      "weight": 5,
+      "minCount": 1,
+      "maxCount": 3,
+      "biomes": [
+        "minecraft:plains",
+        "minecraft:savanna",
+        "minecraft:forest"
+      ]
+    },
+    "mustang": {
+      "enabled": true,
+      "weight": 5,
+      "minCount": 2,
+      "maxCount": 6,
+      "biomes": [
+        "minecraft:plains",
+        "minecraft:savanna",
+        "minecraft:desert"
+      ]
+    },
+    "pegasus": {
+      "enabled": true,
+      "weight": 1,
+      "minCount": 1,
+      "maxCount": 2,
+      "biomes": [
+        "minecraft:jagged_peaks"
+      ]
+    },
+    "shire": {
+      "enabled": true,
+      "weight": 5,
+      "minCount": 2,
+      "maxCount": 6,
+      "biomes": [
+        "minecraft:plains",
+        "minecraft:meadow",
+        "minecraft:forest"
+      ]
+    },
+    "thoroughbred": {
+      "enabled": true,
+      "weight": 5,
+      "minCount": 2,
+      "maxCount": 6,
+      "biomes": [
+        "minecraft:plains",
+        "minecraft:savanna"
+      ]
+    },
+    "turkoman": {
+      "enabled": true,
+      "weight": 5,
+      "minCount": 1,
+      "maxCount": 3,
+      "biomes": [
+        "minecraft:desert",
+        "minecraft:badlands",
+        "minecraft:eroded_badlands"
+      ]
+    },
+    "warmblood": {
+      "enabled": true,
+      "weight": 5,
+      "minCount": 2,
+      "maxCount": 5,
+      "biomes": [
+        "minecraft:plains",
+        "minecraft:meadow",
+        "minecraft:forest"
+      ]
+    }
+  }
+}

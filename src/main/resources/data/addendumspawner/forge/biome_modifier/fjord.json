@@ -1,15 +1,5 @@
 {
-  "type": "forge:add_spawns",
-  "biomes": [
-    "minecraft:snowy_slopes",
-    "minecraft:snowy_taiga",
-    "minecraft:grove",
-    "minecraft:windswept_hills"
-  ],
-  "spawners": {
-    "type": "swemaddendum:fjord",
-    "weight": 5,
-    "minCount": 2,
-    "maxCount": 5
-  }
+  "type": "addendumspawner:configurable_breed_spawn",
+  "breed_key": "fjord",
+  "entity_type": "swemaddendum:fjord"
 }

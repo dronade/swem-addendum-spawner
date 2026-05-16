@@ -1,0 +1,6 @@
+{
+  "type": "addendumspawner:configurable_breed_spawn",
+  "breed_key": "friesian",
+  "entity_type": "swemaddendum:friesian"
+}
+

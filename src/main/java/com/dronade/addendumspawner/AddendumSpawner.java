@@ -1,12 +1,18 @@
 package com.dronade.addendumspawner;
 
-import net.minecraftforge.fml.ModLoadingContext;
+import com.dronade.addendumspawner.registry.ModBiomeModifiers;
+import com.dronade.addendumspawner.world.ModSpawnPlacements;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig.Type;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
-@Mod("addendumspawner")
+@Mod(AddendumSpawner.MODID)
 public class AddendumSpawner {
-    public AddendumSpawner() {
-        ModLoadingContext.get().registerConfig(Type.COMMON, ModConfig.SPEC);
+    public static final String MODID = "addendumspawner";
+
+    public AddendumSpawner(FMLJavaModLoadingContext context) {
+        context.registerConfig(Type.COMMON, ModConfig.SPEC);
+        ModBiomeModifiers.BIOME_MODIFIER_SERIALIZERS.register(context.getModEventBus());
+        context.getModEventBus().addListener(ModSpawnPlacements::onSpawnPlacementRegister);
     }
 }
