@@ -1,5 +1,6 @@
 package com.dronade.addendumspawner.world;
 
+import com.dronade.addendumspawner.AddendumSpawner;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.RandomSource;
@@ -12,34 +13,13 @@ import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.event.entity.SpawnPlacementRegisterEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 
-import java.util.List;
 
 public final class ModSpawnPlacements {
     private ModSpawnPlacements() {}
 
-    private static final List<ResourceLocation> ENTITY_IDS = List.of(
-            ResourceLocation.fromNamespaceAndPath("swemaddendum", "american_quarter_horse"),
-            ResourceLocation.fromNamespaceAndPath("swemaddendum", "arabian"),
-            ResourceLocation.fromNamespaceAndPath("swemaddendum", "breton"),
-            ResourceLocation.fromNamespaceAndPath("swemaddendum", "donkey"),
-            ResourceLocation.fromNamespaceAndPath("swemaddendum", "fjord"),
-            ResourceLocation.fromNamespaceAndPath("swemaddendum", "friesian"),
-            ResourceLocation.fromNamespaceAndPath("swemaddendum", "irish_draught"),
-            ResourceLocation.fromNamespaceAndPath("swemaddendum", "irish_draught_pegasus"),
-            ResourceLocation.fromNamespaceAndPath("swemaddendum", "kladruper"),
-            ResourceLocation.fromNamespaceAndPath("swemaddendum", "knabstrupper"),
-            ResourceLocation.fromNamespaceAndPath("swemaddendum", "marwari"),
-            ResourceLocation.fromNamespaceAndPath("swemaddendum", "mule"),
-            ResourceLocation.fromNamespaceAndPath("swemaddendum", "mustang"),
-            ResourceLocation.fromNamespaceAndPath("swemaddendum", "pegasus"),
-            ResourceLocation.fromNamespaceAndPath("swemaddendum", "shire"),
-            ResourceLocation.fromNamespaceAndPath("swemaddendum", "thoroughbred"),
-            ResourceLocation.fromNamespaceAndPath("swemaddendum", "turkoman"),
-            ResourceLocation.fromNamespaceAndPath("swemaddendum", "warmblood")
-    );
 
     public static void onSpawnPlacementRegister(SpawnPlacementRegisterEvent event) {
-        for (ResourceLocation id : ENTITY_IDS) {
+        for (ResourceLocation id : AddendumSpawner.SPAWNED_ENTITY_IDS) {
             EntityType<?> rawType = ForgeRegistries.ENTITY_TYPES.getValue(id);
             if (rawType == null) continue;
 
