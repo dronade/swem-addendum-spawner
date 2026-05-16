@@ -17,6 +17,7 @@ import java.util.function.Predicate;
 public class ModConfig {
     public static final ForgeConfigSpec SPEC;
     private static final String DEFAULTS_RESOURCE = "/addendumspawner/spawn_defaults.json";
+    private static ForgeConfigSpec.BooleanValue SPAWN_FOALS;
 
     public static final class BreedConfig {
         private final ForgeConfigSpec.BooleanValue enabled;
@@ -71,6 +72,11 @@ public class ModConfig {
         Map<String, BreedDefaults> defaultsByBreed = loadDefaults();
 
         ForgeConfigSpec.Builder builder = new ForgeConfigSpec.Builder();
+
+        SPAWN_FOALS = builder
+                .comment("If true, enables foals to spawn with herds")
+                .define("spawnFoals", false);
+
         builder.push("breeds");
 
         for (Map.Entry<String, BreedDefaults> entry : defaultsByBreed.entrySet()) {
@@ -79,6 +85,10 @@ public class ModConfig {
 
         builder.pop();
         SPEC = builder.build();
+    }
+
+    public static boolean spawnFoals() {
+        return SPAWN_FOALS.get();
     }
 
     private static void defineBreed(ForgeConfigSpec.Builder builder, String key, BreedDefaults defaults) {

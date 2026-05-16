@@ -1,6 +1,7 @@
 package com.dronade.addendumspawner;
 
 import com.dronade.addendumspawner.registry.ModBiomeModifiers;
+import com.dronade.addendumspawner.world.FoalSpawnControl;
 import com.dronade.addendumspawner.world.ModSpawnPlacements;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
@@ -44,6 +45,7 @@ public class AddendumSpawner {
         ModBiomeModifiers.BIOME_MODIFIER_SERIALIZERS.register(context.getModEventBus());
         context.getModEventBus().addListener(ModSpawnPlacements::onSpawnPlacementRegister);
         MinecraftForge.EVENT_BUS.addListener(AddendumSpawner::onPlayerStartTracking);
+        MinecraftForge.EVENT_BUS.addListener(FoalSpawnControl::onFinalizeSpawn);
     }
 
     private static void onPlayerStartTracking(PlayerEvent.StartTracking event) {
@@ -53,6 +55,7 @@ public class AddendumSpawner {
         ResourceLocation entityId = ForgeRegistries.ENTITY_TYPES.getKey(target.getType());
         if (entityId == null || !SPAWNED_ENTITY_IDS.contains(entityId)) return;
 
+        FoalSpawnControl.onPlayerStartTrackingTarget(target);
         target.onAddedToWorld();
     }
 }
