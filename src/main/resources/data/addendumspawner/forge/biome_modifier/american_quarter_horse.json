@@ -1,10 +1,5 @@
 {
   "type": "addendumspawner:configurable_breed_spawn",
   "breed_key": "american_quarter_horse",
-  "spawner": {
-    "type": "swemaddendum:american_quarter_horse",
-    "weight": 5,
-    "minCount": 2,
-    "maxCount": 5
-  }
+  "entity_type": "swemaddendum:american_quarter_horse"
 }

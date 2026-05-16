@@ -1,10 +1,5 @@
 {
   "type": "addendumspawner:configurable_breed_spawn",
   "breed_key": "mule",
-  "spawner": {
-    "type": "swemaddendum:mule",
-    "weight": 5,
-    "minCount": 1,
-    "maxCount": 3
-  }
+  "entity_type": "swemaddendum:mule"
 }

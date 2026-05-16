@@ -1,10 +1,5 @@
 {
   "type": "addendumspawner:configurable_breed_spawn",
   "breed_key": "thoroughbred",
-  "spawner": {
-    "type": "swemaddendum:thoroughbred",
-    "weight": 5,
-    "minCount": 2,
-    "maxCount": 6
-  }
+  "entity_type": "swemaddendum:thoroughbred"
 }

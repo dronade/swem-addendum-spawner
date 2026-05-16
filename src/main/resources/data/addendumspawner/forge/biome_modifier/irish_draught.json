@@ -1,10 +1,5 @@
 {
   "type": "addendumspawner:configurable_breed_spawn",
   "breed_key": "irish_draught",
-  "spawner": {
-    "type": "swemaddendum:irish_draught",
-    "weight": 5,
-    "minCount": 2,
-    "maxCount": 6
-  }
+  "entity_type": "swemaddendum:irish_draught"
 }
