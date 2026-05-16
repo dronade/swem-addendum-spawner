@@ -68,4 +68,3 @@ public final class ModSpawnPlacements {
         return Animal.checkAnimalSpawnRules(entityType, level, spawnType, pos, random);
     }
 }
-
