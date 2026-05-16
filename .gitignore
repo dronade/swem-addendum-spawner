@@ -19,6 +19,4 @@ out/
 logs/
 
 # Local configs
-gradle.properties
-!gradle.properties.example
 *.log
