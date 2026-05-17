@@ -1,10 +1,10 @@
-**Breed Defaults**
+## Breed Defaults
 
 Each entry shows: `enabled`, `weight`, `minCount`, `maxCount`, and `biomes` (namespaced biome ids).
 
 ---
-0. **Foals**
-
+0. **steed_foals**
+- spawnFoals: false
 
 1. **american_quarter_horse**
 - enabled: true
