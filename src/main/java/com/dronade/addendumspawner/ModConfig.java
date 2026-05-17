@@ -96,23 +96,23 @@ public class ModConfig {
         builder.push(key);
 
         ForgeConfigSpec.BooleanValue enabled = builder
-                .comment("Enable/disable natural spawning for this breed.")
+                .comment("-> Enable/disable natural spawning for this breed.")
                 .define("enabled", defaults.enabled());
 
         ForgeConfigSpec.IntValue weight = builder
-                .comment("Spawn weight used when this breed is added to biome spawn tables.")
+                .comment("-> Spawn weight used when this breed is added to biome spawn tables.")
                 .defineInRange("weight", defaults.weight(), 1, 1000);
 
         ForgeConfigSpec.IntValue minCount = builder
-                .comment("Minimum group size for this breed.")
+                .comment("-> Minimum group size for this breed.")
                 .defineInRange("minCount", defaults.minCount(), 1, 32);
 
         ForgeConfigSpec.IntValue maxCount = builder
-                .comment("Maximum group size for this breed.")
+                .comment("-> Maximum group size for this breed.")
                 .defineInRange("maxCount", defaults.maxCount(), 1, 32);
 
         ForgeConfigSpec.ConfigValue<List<? extends String>> biomes = builder
-                .comment("Biome whitelist for this breed. Only these biome ids can spawn this breed.")
+                .comment("-> Biome whitelist for this breed. Only these biome ids can spawn this breed.")
                 .defineListAllowEmpty("biome_whitelist", defaults.biomes(), validBiomeString);
 
         builder.pop();
