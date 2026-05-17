@@ -2,9 +2,9 @@
   "breeds": {
     "american_quarter_horse": {
       "enabled": true,
-      "weight": 5,
-      "minCount": 2,
-      "maxCount": 5,
+      "weight": 3,
+      "minCount": 1,
+      "maxCount": 4,
       "biomes": [
         "minecraft:plains",
         "minecraft:savanna",
@@ -13,9 +13,9 @@
     },
     "arabian": {
       "enabled": true,
-      "weight": 5,
-      "minCount": 2,
-      "maxCount": 5,
+      "weight": 3,
+      "minCount": 1,
+      "maxCount": 4,
       "biomes": [
         "minecraft:desert",
         "minecraft:savanna",
@@ -24,9 +24,9 @@
     },
     "breton": {
       "enabled": true,
-      "weight": 5,
-      "minCount": 2,
-      "maxCount": 5,
+      "weight": 3,
+      "minCount": 1,
+      "maxCount": 4,
       "biomes": [
         "minecraft:forest",
         "minecraft:birch_forest",
@@ -35,8 +35,8 @@
     },
     "donkey": {
       "enabled": true,
-      "weight": 5,
-      "minCount": 2,
+      "weight": 3,
+      "minCount": 1,
       "maxCount": 4,
       "biomes": [
         "minecraft:desert",
@@ -46,9 +46,9 @@
     },
     "fjord": {
       "enabled": true,
-      "weight": 5,
-      "minCount": 2,
-      "maxCount": 5,
+      "weight": 3,
+      "minCount": 1,
+      "maxCount": 4,
       "biomes": [
         "minecraft:snowy_slopes",
         "minecraft:snowy_taiga",
@@ -58,9 +58,9 @@
     },
     "friesian": {
       "enabled": true,
-      "weight": 5,
-      "minCount": 2,
-      "maxCount": 5,
+      "weight": 3,
+      "minCount": 1,
+      "maxCount": 4,
       "biomes": [
         "minecraft:dark_forest",
         "minecraft:forest",
@@ -69,9 +69,9 @@
     },
     "irish_draught": {
       "enabled": true,
-      "weight": 5,
-      "minCount": 2,
-      "maxCount": 6,
+      "weight": 3,
+      "minCount": 1,
+      "maxCount": 4,
       "biomes": [
         "minecraft:plains",
         "minecraft:meadow",
@@ -91,8 +91,8 @@
     },
     "kladruper": {
       "enabled": true,
-      "weight": 5,
-      "minCount": 2,
+      "weight": 3,
+      "minCount": 1,
       "maxCount": 4,
       "biomes": [
         "minecraft:plains",
@@ -102,9 +102,9 @@
     },
     "knabstrupper": {
       "enabled": true,
-      "weight": 5,
+      "weight": 3,
       "minCount": 1,
-      "maxCount": 3,
+      "maxCount": 4,
       "biomes": [
         "minecraft:plains",
         "minecraft:sunflower_plains",
@@ -113,9 +113,9 @@
     },
     "marwari": {
       "enabled": true,
-      "weight": 5,
+      "weight": 3,
       "minCount": 1,
-      "maxCount": 2,
+      "maxCount": 4,
       "biomes": [
         "minecraft:desert",
         "minecraft:badlands",
@@ -124,9 +124,9 @@
     },
     "mule": {
       "enabled": true,
-      "weight": 5,
+      "weight": 3,
       "minCount": 1,
-      "maxCount": 3,
+      "maxCount": 4,
       "biomes": [
         "minecraft:plains",
         "minecraft:savanna",
@@ -135,9 +135,9 @@
     },
     "mustang": {
       "enabled": true,
-      "weight": 5,
-      "minCount": 2,
-      "maxCount": 6,
+      "weight": 3,
+      "minCount": 1,
+      "maxCount": 4,
       "biomes": [
         "minecraft:plains",
         "minecraft:savanna",
@@ -155,9 +155,9 @@
     },
     "shire": {
       "enabled": true,
-      "weight": 5,
-      "minCount": 2,
-      "maxCount": 6,
+      "weight": 3,
+      "minCount": 1,
+      "maxCount": 4,
       "biomes": [
         "minecraft:plains",
         "minecraft:meadow",
@@ -166,9 +166,9 @@
     },
     "thoroughbred": {
       "enabled": true,
-      "weight": 5,
-      "minCount": 2,
-      "maxCount": 6,
+      "weight": 3,
+      "minCount": 1,
+      "maxCount": 4,
       "biomes": [
         "minecraft:plains",
         "minecraft:savanna"
@@ -176,9 +176,9 @@
     },
     "turkoman": {
       "enabled": true,
-      "weight": 5,
+      "weight": 3,
       "minCount": 1,
-      "maxCount": 3,
+      "maxCount": 4,
       "biomes": [
         "minecraft:desert",
         "minecraft:badlands",
@@ -187,9 +187,9 @@
     },
     "warmblood": {
       "enabled": true,
-      "weight": 5,
-      "minCount": 2,
-      "maxCount": 5,
+      "weight": 3,
+      "minCount": 1,
+      "maxCount": 4,
       "biomes": [
         "minecraft:plains",
         "minecraft:meadow",
