@@ -4,9 +4,11 @@ import com.dronade.addendumspawner.registry.ModBiomeModifiers;
 import com.dronade.addendumspawner.world.FoalSpawnControl;
 import com.dronade.addendumspawner.world.ModSpawnPlacements;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.entity.AgeableMob;
+import net.minecraft.world.entity.Entity;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.entity.EntityJoinLevelEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig.Type;
@@ -19,25 +21,31 @@ import java.util.List;
 public class AddendumSpawner {
     public static final String MODID = "addendumspawner";
 
+    private static ResourceLocation resource(String path) {
+        // ResourceLocation is depreciated, but optifine crashes on its alternative 'fromNamespaceAndPath',
+        // so we're stuck with this for 1.20.1. :/
+        return new ResourceLocation("swemaddendum", path);
+    }
+
     public static final List<ResourceLocation> SPAWNED_ENTITY_IDS = List.of(
-            ResourceLocation.fromNamespaceAndPath("swemaddendum", "american_quarter_horse"),
-            ResourceLocation.fromNamespaceAndPath("swemaddendum", "arabian"),
-            ResourceLocation.fromNamespaceAndPath("swemaddendum", "breton"),
-            ResourceLocation.fromNamespaceAndPath("swemaddendum", "donkey"),
-            ResourceLocation.fromNamespaceAndPath("swemaddendum", "fjord"),
-            ResourceLocation.fromNamespaceAndPath("swemaddendum", "friesian"),
-            ResourceLocation.fromNamespaceAndPath("swemaddendum", "irish_draught"),
-            ResourceLocation.fromNamespaceAndPath("swemaddendum", "irish_draught_pegasus"),
-            ResourceLocation.fromNamespaceAndPath("swemaddendum", "kladruper"),
-            ResourceLocation.fromNamespaceAndPath("swemaddendum", "knabstrupper"),
-            ResourceLocation.fromNamespaceAndPath("swemaddendum", "marwari"),
-            ResourceLocation.fromNamespaceAndPath("swemaddendum", "mule"),
-            ResourceLocation.fromNamespaceAndPath("swemaddendum", "mustang"),
-            ResourceLocation.fromNamespaceAndPath("swemaddendum", "pegasus"),
-            ResourceLocation.fromNamespaceAndPath("swemaddendum", "shire"),
-            ResourceLocation.fromNamespaceAndPath("swemaddendum", "thoroughbred"),
-            ResourceLocation.fromNamespaceAndPath("swemaddendum", "turkoman"),
-            ResourceLocation.fromNamespaceAndPath("swemaddendum", "warmblood")
+            resource("american_quarter_horse"),
+            resource("arabian"),
+            resource("breton"),
+            resource("donkey"),
+            resource("fjord"),
+            resource("friesian"),
+            resource("irish_draught"),
+            resource("irish_draught_pegasus"),
+            resource("kladruper"),
+            resource("knabstrupper"),
+            resource("marwari"),
+            resource("mule"),
+            resource("mustang"),
+            resource("pegasus"),
+            resource("shire"),
+            resource("thoroughbred"),
+            resource("turkoman"),
+            resource("warmblood")
     );
 
     public AddendumSpawner(FMLJavaModLoadingContext context) {
