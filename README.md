@@ -11,7 +11,7 @@ The [defaults](docs/defaults.md) page highlights what default config values the 
 
 This mod requires the SWEM Addendum mod to be installed and loaded, alongside any of their dependecies. Please ensure you have SWEM Addendum in your mods folder for this addon to work.
 
-You must also have a community pack with swem addenum compatible coat's loaded - without this, horses will appear black.  For more information on how to do this, please see SWEM addendum's wiki.
+You must also have a resource pack with swem addenum compatible coat's loaded - without this, horses will appear black.  For more information on how to do this, please see SWEM addendum's wiki.
 
 ## Support
 
