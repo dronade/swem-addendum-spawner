@@ -4,7 +4,7 @@ license="All Rights Reserved"
 
 [[mods]]
 modId="addendumspawner"
-version="1.0.3"
+version="1.0.4"
 displayName="SWEM Addendum Spawner"
 description='''
 Adds SWEM Addendum horses to natural spawn tables.

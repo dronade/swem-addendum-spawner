@@ -5,13 +5,12 @@ import com.dronade.addendumspawner.world.FoalSpawnControl;
 import com.dronade.addendumspawner.world.ModSpawnPlacements;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.Entity;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.entity.EntityJoinLevelEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig.Type;
+import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.ForgeRegistries;
 
@@ -48,8 +47,11 @@ public class AddendumSpawner {
             resource("warmblood")
     );
 
-    public AddendumSpawner(FMLJavaModLoadingContext context) {
-        context.registerConfig(Type.COMMON, ModConfig.SPEC);
+    public AddendumSpawner() {
+        // get is also depreciated, but old forge versions crash on its alternative
+        // (arguments inside the constructor), so also stuck with this one for 1.20.1. :(
+        FMLJavaModLoadingContext context = FMLJavaModLoadingContext.get();
+        ModLoadingContext.get().registerConfig(Type.COMMON, ModConfig.SPEC);
         ModBiomeModifiers.BIOME_MODIFIER_SERIALIZERS.register(context.getModEventBus());
         context.getModEventBus().addListener(ModSpawnPlacements::onSpawnPlacementRegister);
         MinecraftForge.EVENT_BUS.addListener(AddendumSpawner::onPlayerStartTracking);
