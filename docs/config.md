@@ -66,4 +66,4 @@ biome_whitelist = ["minecraft:plains", "minecraft:savanna", "biomesoplenty:conif
 
 - **When changes take effect:** Always restart the dedicated server or the single-player world after editing the file. Running servers may cache spawn tables; a restart ensures the new settings are loaded.
 
-For any issues or questions, please reach out to dronade on Discord.
+For any issues or questions, please join our Discord (https://discord.gg/Mk9hVzEj7m) and ask for help in the support channel.
