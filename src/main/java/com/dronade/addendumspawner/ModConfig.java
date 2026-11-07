@@ -5,7 +5,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraftforge.common.ForgeConfigSpec;
+import net.neoforged.neoforge.common.ModConfigSpec;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -15,22 +15,22 @@ import java.util.*;
 import java.util.function.Predicate;
 
 public class ModConfig {
-    public static final ForgeConfigSpec SPEC;
+    public static final ModConfigSpec SPEC;
     private static final String DEFAULTS_RESOURCE = "/addendumspawner/spawn_defaults.json";
-    private static ForgeConfigSpec.BooleanValue SPAWN_FOALS;
+    private static ModConfigSpec.BooleanValue SPAWN_FOALS;
 
     public static final class BreedConfig {
-        private final ForgeConfigSpec.BooleanValue enabled;
-        private final ForgeConfigSpec.IntValue weight;
-        private final ForgeConfigSpec.IntValue minCount;
-        private final ForgeConfigSpec.IntValue maxCount;
-        private final ForgeConfigSpec.ConfigValue<List<? extends String>> biomeWhitelist;
+        private final ModConfigSpec.BooleanValue enabled;
+        private final ModConfigSpec.IntValue weight;
+        private final ModConfigSpec.IntValue minCount;
+        private final ModConfigSpec.IntValue maxCount;
+        private final ModConfigSpec.ConfigValue<List<? extends String>> biomeWhitelist;
 
-        private BreedConfig(ForgeConfigSpec.BooleanValue enabled,
-                            ForgeConfigSpec.IntValue weight,
-                            ForgeConfigSpec.IntValue minCount,
-                            ForgeConfigSpec.IntValue maxCount,
-                            ForgeConfigSpec.ConfigValue<List<? extends String>> biomeWhitelist) {
+        private BreedConfig(ModConfigSpec.BooleanValue enabled,
+                            ModConfigSpec.IntValue weight,
+                            ModConfigSpec.IntValue minCount,
+                            ModConfigSpec.IntValue maxCount,
+                            ModConfigSpec.ConfigValue<List<? extends String>> biomeWhitelist) {
             this.enabled = enabled;
             this.weight = weight;
             this.minCount = minCount;
@@ -71,7 +71,7 @@ public class ModConfig {
     static {
         Map<String, BreedDefaults> defaultsByBreed = loadDefaults();
 
-        ForgeConfigSpec.Builder builder = new ForgeConfigSpec.Builder();
+        ModConfigSpec.Builder builder = new ModConfigSpec.Builder();
 
         SPAWN_FOALS = builder
                 .comment("If true, enables foals to spawn with herds")
@@ -91,27 +91,27 @@ public class ModConfig {
         return SPAWN_FOALS.get();
     }
 
-    private static void defineBreed(ForgeConfigSpec.Builder builder, String key, BreedDefaults defaults) {
+    private static void defineBreed(ModConfigSpec.Builder builder, String key, BreedDefaults defaults) {
         Predicate<Object> validBiomeString = o -> o instanceof String s && ResourceLocation.tryParse(s) != null;
         builder.push(key);
 
-        ForgeConfigSpec.BooleanValue enabled = builder
+        ModConfigSpec.BooleanValue enabled = builder
                 .comment("-> Enable/disable natural spawning for this breed.")
                 .define("enabled", defaults.enabled());
 
-        ForgeConfigSpec.IntValue weight = builder
+        ModConfigSpec.IntValue weight = builder
                 .comment("-> Spawn weight used when this breed is added to biome spawn tables.")
                 .defineInRange("weight", defaults.weight(), 1, 1000);
 
-        ForgeConfigSpec.IntValue minCount = builder
+        ModConfigSpec.IntValue minCount = builder
                 .comment("-> Minimum group size for this breed.")
                 .defineInRange("minCount", defaults.minCount(), 1, 32);
 
-        ForgeConfigSpec.IntValue maxCount = builder
+        ModConfigSpec.IntValue maxCount = builder
                 .comment("-> Maximum group size for this breed.")
                 .defineInRange("maxCount", defaults.maxCount(), 1, 32);
 
-        ForgeConfigSpec.ConfigValue<List<? extends String>> biomes = builder
+        ModConfigSpec.ConfigValue<List<? extends String>> biomes = builder
                 .comment("-> Biome whitelist for this breed. Only these biome ids can spawn this breed.")
                 .defineListAllowEmpty("biome_whitelist", defaults.biomes(), validBiomeString);
 

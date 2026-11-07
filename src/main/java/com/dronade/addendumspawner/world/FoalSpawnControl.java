@@ -2,25 +2,25 @@ package com.dronade.addendumspawner.world;
 
 import com.dronade.addendumspawner.AddendumSpawner;
 import com.dronade.addendumspawner.ModConfig;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.MobSpawnType;
-import net.minecraftforge.event.entity.living.MobSpawnEvent;
-import net.minecraftforge.registries.ForgeRegistries;
+import net.neoforged.neoforge.event.entity.living.FinalizeSpawnEvent;
 
 public final class FoalSpawnControl {
     private static final String FORCE_ADULT_TAG = "addendumspawner.force_adult";
 
     private FoalSpawnControl() {}
 
-    public static void onFinalizeSpawn(MobSpawnEvent.FinalizeSpawn event) {
+    public static void onFinalizeSpawn(FinalizeSpawnEvent event) {
         if (ModConfig.spawnFoals()) return;
 
         MobSpawnType spawnType = event.getSpawnType();
         if (spawnType != MobSpawnType.NATURAL && spawnType != MobSpawnType.CHUNK_GENERATION) return;
 
-        ResourceLocation entityId = ForgeRegistries.ENTITY_TYPES.getKey(event.getEntity().getType());
+        ResourceLocation entityId = BuiltInRegistries.ENTITY_TYPE.getKey(event.getEntity().getType());
         if (entityId == null || !AddendumSpawner.SPAWNED_ENTITY_IDS.contains(entityId)) return;
 
         if (!(event.getEntity() instanceof AgeableMob)) return;

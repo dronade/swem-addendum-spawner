@@ -3,16 +3,16 @@ package com.dronade.addendumspawner;
 import com.dronade.addendumspawner.registry.ModBiomeModifiers;
 import com.dronade.addendumspawner.world.FoalSpawnControl;
 import com.dronade.addendumspawner.world.ModSpawnPlacements;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.entity.player.PlayerEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.config.ModConfig.Type;
-import net.minecraftforge.fml.ModLoadingContext;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.registries.ForgeRegistries;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.config.ModConfig;
+import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 
 import java.util.List;
 
@@ -21,9 +21,7 @@ public class AddendumSpawner {
     public static final String MODID = "addendumspawner";
 
     private static ResourceLocation resource(String path) {
-        // ResourceLocation is depreciated, but optifine crashes on its alternative 'fromNamespaceAndPath',
-        // so we're stuck with this for 1.20.1. :/
-        return new ResourceLocation("swemaddendum", path);
+        return ResourceLocation.fromNamespaceAndPath("swemaddendum", path);
     }
 
     public static final List<ResourceLocation> SPAWNED_ENTITY_IDS = List.of(
@@ -47,25 +45,21 @@ public class AddendumSpawner {
             resource("warmblood")
     );
 
-    public AddendumSpawner() {
-        // get is also depreciated, but old forge versions crash on its alternative
-        // (arguments inside the constructor), so also stuck with this one for 1.20.1. :(
-        FMLJavaModLoadingContext context = FMLJavaModLoadingContext.get();
-        ModLoadingContext.get().registerConfig(Type.COMMON, ModConfig.SPEC);
-        ModBiomeModifiers.BIOME_MODIFIER_SERIALIZERS.register(context.getModEventBus());
-        context.getModEventBus().addListener(ModSpawnPlacements::onSpawnPlacementRegister);
-        MinecraftForge.EVENT_BUS.addListener(AddendumSpawner::onPlayerStartTracking);
-        MinecraftForge.EVENT_BUS.addListener(FoalSpawnControl::onFinalizeSpawn);
+    public AddendumSpawner(IEventBus modEventBus, ModContainer modContainer) {
+        modContainer.registerConfig(ModConfig.Type.COMMON, com.dronade.addendumspawner.ModConfig.SPEC);
+        ModBiomeModifiers.BIOME_MODIFIER_SERIALIZERS.register(modEventBus);
+        modEventBus.addListener(ModSpawnPlacements::onSpawnPlacementRegister);
+        NeoForge.EVENT_BUS.addListener(AddendumSpawner::onPlayerStartTracking);
+        NeoForge.EVENT_BUS.addListener(FoalSpawnControl::onFinalizeSpawn);
     }
 
     private static void onPlayerStartTracking(PlayerEvent.StartTracking event) {
         if (!(event.getEntity() instanceof ServerPlayer)) return;
 
         Entity target = event.getTarget();
-        ResourceLocation entityId = ForgeRegistries.ENTITY_TYPES.getKey(target.getType());
+        ResourceLocation entityId = BuiltInRegistries.ENTITY_TYPE.getKey(target.getType());
         if (entityId == null || !SPAWNED_ENTITY_IDS.contains(entityId)) return;
 
         FoalSpawnControl.onPlayerStartTrackingTarget(target);
-        target.onAddedToWorld();
     }
 }

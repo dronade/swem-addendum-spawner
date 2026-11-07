@@ -2,9 +2,10 @@ package com.dronade.addendumspawner.world;
 
 import com.dronade.addendumspawner.ModConfig;
 import com.dronade.addendumspawner.registry.ModBiomeModifiers;
-import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.Holder;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.ExtraCodecs;
@@ -12,9 +13,8 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.MobSpawnSettings;
-import net.minecraftforge.common.world.BiomeModifier;
-import net.minecraftforge.common.world.ModifiableBiomeInfo;
-import net.minecraftforge.registries.ForgeRegistries;
+import net.neoforged.neoforge.common.world.ModifiableBiomeInfo;
+import net.neoforged.neoforge.common.world.BiomeModifier;
 
 import java.util.Optional;
 import java.util.Set;
@@ -24,7 +24,7 @@ public record ConfigurableBreedSpawnBiomeModifier(
         ResourceLocation entityType
 ) implements BiomeModifier {
 
-    public static final Codec<ConfigurableBreedSpawnBiomeModifier> CODEC = RecordCodecBuilder.create(instance ->
+    public static final MapCodec<ConfigurableBreedSpawnBiomeModifier> CODEC = RecordCodecBuilder.mapCodec(instance ->
             instance.group(
                     ExtraCodecs.NON_EMPTY_STRING.fieldOf("breed_key").forGetter(ConfigurableBreedSpawnBiomeModifier::breedKey),
                     ResourceLocation.CODEC.fieldOf("entity_type").forGetter(ConfigurableBreedSpawnBiomeModifier::entityType)
@@ -40,7 +40,7 @@ public record ConfigurableBreedSpawnBiomeModifier(
 
         if (!isBiomeAllowed(biome, cfg)) return;
 
-        EntityType<?> rawType = ForgeRegistries.ENTITY_TYPES.getValue(entityType);
+        EntityType<?> rawType = BuiltInRegistries.ENTITY_TYPE.get(entityType);
         if (rawType == null) return;
 
         @SuppressWarnings("unchecked")
@@ -66,7 +66,7 @@ public record ConfigurableBreedSpawnBiomeModifier(
     }
 
     @Override
-    public Codec<? extends BiomeModifier> codec() {
+    public MapCodec<? extends BiomeModifier> codec() {
         return ModBiomeModifiers.CONFIGURABLE_BREED_SPAWN.get();
     }
 }
