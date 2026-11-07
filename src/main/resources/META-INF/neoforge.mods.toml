@@ -1,0 +1,32 @@
+modLoader="javafml"
+loaderVersion="[1,)"
+license="All Rights Reserved"
+
+[[mods]]
+modId="addendumspawner"
+version="1.21.1-1.0.0"
+displayName="SWEM Addendum Spawner"
+description='''
+Adds SWEM Addendum horses to natural spawn tables.
+'''
+
+[[dependencies.addendumspawner]]
+    modId="neoforge"
+    type="required"
+    versionRange="[21.1.265,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.addendumspawner]]
+    modId="minecraft"
+    type="required"
+    versionRange="[1.21.1,1.22)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.addendumspawner]]
+    modId="swemaddendum"
+    type="required"
+    versionRange="[1.0.0,)"
+    ordering="NONE"
+    side="BOTH"

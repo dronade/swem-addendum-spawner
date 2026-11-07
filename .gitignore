@@ -15,6 +15,7 @@ bin/
 
 # Minecraft/Forge runtime data
 run/
+runs/
 out/
 logs/
 
